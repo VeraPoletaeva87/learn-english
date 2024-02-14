@@ -1,0 +1,32 @@
+.wrap ol {
+    list-style-position: inside;
+    -moz-column-count: 2; /* Firefox */
+    -webkit-column-count: 2; /* Safari and Chrome */
+    column-count: 2;
+    list-style-type: decimal;
+    height: 100px;
+  }
+
+.red-color {
+    background-color: red;
+}  
+
+.green-color {
+    background-color: green;
+}
+
+.white-color {
+    background-color: beige;
+}
+
+.word-card {
+    background-color: beige;
+    padding: 20px;
+    height: 220px;
+    border-radius: 22px;
+    box-shadow: 4px 4px 2px grey;
+}
+
+.wrap li:hover {
+    cursor: pointer;
+}
