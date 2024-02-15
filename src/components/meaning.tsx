@@ -4,7 +4,7 @@
   
   const MeaningCard = () => {
     const location = useLocation();
-    const id  = location.state.id;
+    const id  = location.state.id - 1;
       const currentWord = wordsAndMeanings[id];
     
       return (

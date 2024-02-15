@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { wordsAndMeanings } from "../data/data";
 
 const WordsList = () => {
   const navigate = useNavigate();
 
   const clickHandler = (id: number) => {
-    navigate(`/details/${id}`, { state: { id: id } });
+    navigate(`/wordcards/${id}`, { state: { id: id } });
   };
 
   return (
@@ -17,6 +17,7 @@ const WordsList = () => {
           </div>
         ))}
       </div>
+      <Outlet />
     </>
   );
 }

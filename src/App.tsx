@@ -13,8 +13,9 @@ function App() {
     <Routes>
       <Route path="/" Component={Main} />
       <Route path="/quiz" Component={WordCard} />
-      <Route path="/wordcards" Component={WordsList} />
-      <Route path="/details/:id" Component={MeaningCard} />
+      <Route path="wordcards" Component={WordsList}>
+        <Route path=":id" Component={MeaningCard} />
+      </Route>
     </Routes>
     </>
   )
