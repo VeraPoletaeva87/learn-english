@@ -12,6 +12,12 @@
               <h2>{currentWord.word}</h2>
              <div>{currentWord.options[currentWord.answer]}</div> 
              <div>{currentWord.meaning}</div> 
+             <div>Synonyms:</div> 
+             {currentWord.synonyms?.map((item) => (
+                <div key={item}>
+                    {item}
+                </div>
+        ))}
         </div>
       );
     };

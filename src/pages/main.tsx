@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
+import './main.css';
 const Main = () => {
     return (
-      <>
+      <div className='block'>
       <h2>Welcome to the English Learning App!</h2>
       <nav>
         <ul>
@@ -9,7 +10,7 @@ const Main = () => {
           <li><Link to="/wordcards">Word Cards</Link></li>
         </ul>
       </nav>
-      </>
+      </div>
     );
   }
   

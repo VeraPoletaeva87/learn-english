@@ -1,5 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { wordsAndMeanings } from "../data/data";
+import './WordList.css';
 
 const WordsList = () => {
   const navigate = useNavigate();
@@ -9,8 +10,8 @@ const WordsList = () => {
   };
 
   return (
-    <>
-      <div className='flex-row'>
+    <div className="flex">
+      <div className='list'>
         {wordsAndMeanings?.map((item) => (
           <div key={item.word} onClick={() => clickHandler(item.id)}>
              {item.word}
@@ -18,7 +19,7 @@ const WordsList = () => {
         ))}
       </div>
       <Outlet />
-    </>
+    </div>
   );
 }
   
