@@ -10,10 +10,10 @@
     
       return (
         <>
-            <Card title={currentWord.word} bordered={true} style={{ width: 300 }}>
+            <Card title={currentWord.word} bordered={true} className="bg-lime-200 p-5 shadow-2xl">
                 <div>{currentWord.options[currentWord.answer]}</div> 
                 <div>{currentWord.meaning}</div> 
-                <div>Synonyms:</div> 
+                <div className="font-bold tracking-wider text-lime-900 underline">Synonyms:</div> 
                 {currentWord.synonyms?.map((item) => (
                     <div key={item}>
                         {item}

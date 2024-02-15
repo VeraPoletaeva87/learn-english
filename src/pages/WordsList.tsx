@@ -12,7 +12,6 @@ const WordsList = () => {
 
   return (
     <div className="flex flex-row">
-      <div className="text-3xl font-bold underline">test</div>
       <List
       header={<div>Words list</div>}
       bordered
