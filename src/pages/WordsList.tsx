@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { wordsAndMeanings } from "../data/data";
-import './WordList.css';
+import { List } from 'antd';
+import './WordsList.css';
 
 const WordsList = () => {
   const navigate = useNavigate();
@@ -10,14 +11,18 @@ const WordsList = () => {
   };
 
   return (
-    <div className="flex">
-      <div className='list'>
-        {wordsAndMeanings?.map((item) => (
-          <div key={item.word} onClick={() => clickHandler(item.id)}>
-             {item.word}
-          </div>
-        ))}
-      </div>
+    <div className="flex flex-row">
+      <div className="text-3xl font-bold underline">test</div>
+      <List
+      header={<div>Words list</div>}
+      bordered
+      dataSource={wordsAndMeanings}
+      renderItem={(item) => (
+        <List.Item onClick={() => clickHandler(item.id)}>
+          {item.word}
+        </List.Item>
+      )}
+    />
       <Outlet />
     </div>
   );
