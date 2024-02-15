@@ -42,7 +42,7 @@ const WordCard = () => {
             <h2>{currentWord.word}</h2>
             <div className="wrap">
                 <ol>
-                    {currentWord.meanings.map((meaning, index) => (
+                    {currentWord.options.map((meaning, index) => (
                         <li className={!answered ? 'white-color' :
                             selectedAnswer === index && wrong ? 'red-color' : selectedAnswer === index && !wrong ? 'green-color' : ''}
                             key={index}
