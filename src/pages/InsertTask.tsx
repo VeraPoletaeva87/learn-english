@@ -29,6 +29,8 @@ const drop = (ev) => {
     if (currentWord.answer !== currentWord.options.indexOf(option)) {
         setWrong(true);
         
+    } else {
+        setWrong(false);
     }
     setAnswered(true);
     setAnswer(option);

@@ -14,7 +14,7 @@
                 <div className="text-base mb-2">{currentWord.options[currentWord.answer]}</div> 
                 <div className="text-yellow-800 ml-2">{currentWord.meaning}</div> 
                 <div className="text-yellow-800 ml-2 mb-2">{currentWord.example}</div> 
-                <div className="font-bold tracking-wider">Synonyms:</div> 
+                <div className="tracking-wider">Synonyms:</div> 
                 <div className="text-yellow-800 flex justify-between w-full ml-2">
                   {currentWord.synonyms?.map((item) => (
                     <div key={item}>

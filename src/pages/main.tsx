@@ -1,5 +1,6 @@
 import quiz from './../assets/quiz.jpg';
 import vocabulary from './../assets/vocabulary.png';
+import insert from './../assets/insert.png';
 import { List, Avatar } from 'antd';
 const Main = () => {
     const data = [
@@ -16,10 +17,10 @@ const Main = () => {
             image: vocabulary
         },
         {
-          title: "Learn rules",
+          title: "Vocabulary Task",
           link: "/insertTask",
-          description: 'Learn rules with insert task!',
-          image: vocabulary
+          description: 'Practice using words with insert task!',
+          image: insert
       }
     ]
     return (
