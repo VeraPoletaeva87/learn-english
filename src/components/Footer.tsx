@@ -1,9 +1,9 @@
 import LogoGitHub from '../assets/github-logo.png';
-
+const year = new Date().getFullYear();
 function Footer() {
   return (
       <div className='flex bg-lime-50 justify-center items-baseline'>
-        <div>&copy; 2023</div>
+        <div>&copy;{year}</div>
         <a
               href="https://github.com/verapoletaeva87"
               target="_blank"

@@ -115,6 +115,10 @@
   margin-left: 0.5rem
 }
 
+.mr-10 {
+  margin-right: 2.5rem
+}
+
 .mr-12 {
   margin-right: 3rem
 }
@@ -149,6 +153,10 @@
 
 .h-96 {
   height: 24rem
+}
+
+.w-1\/2 {
+  width: 50%
 }
 
 .w-1\/4 {
@@ -205,6 +213,14 @@
   padding: 1.25rem
 }
 
+.text-justify {
+  text-align: justify
+}
+
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem
@@ -225,12 +241,32 @@
   line-height: 1rem
 }
 
-.font-bold {
-  font-weight: 700
+.font-semibold {
+  font-weight: 600
+}
+
+.font-thin {
+  font-weight: 100
+}
+
+.font-extrabold {
+  font-weight: 800
 }
 
 .tracking-wider {
   letter-spacing: 0.05em
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em
 }
 
 .text-amber-700 {
@@ -238,9 +274,19 @@
   color: rgb(180 83 9 / var(--tw-text-opacity))
 }
 
+.text-slate-600 {
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity))
+}
+
 .text-yellow-800 {
   --tw-text-opacity: 1;
   color: rgb(133 77 14 / var(--tw-text-opacity))
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
 }
 
 .shadow-2xl {

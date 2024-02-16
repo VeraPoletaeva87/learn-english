@@ -1,9 +1,16 @@
 import quiz from './../assets/quiz.jpg';
 import vocabulary from './../assets/vocabulary.png';
 import insert from './../assets/insert.png';
+import grammar from './../assets/grammar.jpg';
 import { List, Avatar } from 'antd';
 const Main = () => {
     const data = [
+      {
+        title: "Rules",
+        link: "/grammar",
+        description: 'Learn grammar rules!',
+        image: grammar
+    },
         {
             title: "Start Quiz",
             link: "/quiz",

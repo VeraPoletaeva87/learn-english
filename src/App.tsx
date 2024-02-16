@@ -7,6 +7,8 @@ import WordsList from './pages/WordsList';
 import MeaningCard from './components/meaning';
 import Layout from './pages/Layout';
 import InsertTask from './pages/InsertTask';
+import RulesList from './pages/RulesList';
+import GrammarCard from './components/GrammarCard';
 
 function App() {
 
@@ -19,6 +21,9 @@ function App() {
         <Route path="/insertTask" Component={InsertTask}/>
         <Route path="wordcards" Component={WordsList}>
           <Route path=":id" Component={MeaningCard} />
+        </Route>
+        <Route path="grammar" Component={RulesList}>
+          <Route path=":id" Component={GrammarCard} />
         </Route>
       </Route>
     </Routes>

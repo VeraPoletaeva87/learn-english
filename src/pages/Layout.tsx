@@ -1,14 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 function Layout() {
 
   return (
     <>
       <div>
-        <div className="bg-lime-50 h-14 flex justify-center">
-            <div className='text-xl tracking-wider text-amber-700'>Welcome to the English Learning App!</div>
-        </div>
+        <Header/>
         <div className='h-96'>
           <Outlet />
         </div>
