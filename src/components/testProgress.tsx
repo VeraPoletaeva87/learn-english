@@ -17,10 +17,10 @@ const WordTestProgress = ({ totalWords, answeredWords }) => {
         ></div>
       </div>
       <div className="progress-info">
-        <p>
+        <p className='text-xs'>
           Answers given: {answeredWords} / {totalWords}
         </p>
-        <p>Pending: {pendingWords}</p>
+        <p className='text-xs'>Pending: {pendingWords}</p>
       </div>
     </div>
   );

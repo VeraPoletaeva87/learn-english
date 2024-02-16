@@ -11,9 +11,9 @@ const WordsList = () => {
   };
 
   return (
-    <div className="flex flex-row">
-      <List
-      header={<div>Words list</div>}
+    <div className="flex flex-row ml-12 mt-12">
+      <List className="mr-12 bg-lime-50"
+      header={<div className="text-lg">Words list</div>}
       bordered
       dataSource={wordsAndMeanings}
       renderItem={(item) => (

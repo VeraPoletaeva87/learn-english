@@ -1,4 +1,3 @@
-import './main.css';
 import quiz from './../assets/quiz.jpg';
 import vocabulary from './../assets/vocabulary.png';
 import { List, Avatar } from 'antd';
@@ -18,8 +17,7 @@ const Main = () => {
         }
     ]
     return (
-      <div className='block'>
-      <h2>Welcome to the English Learning App!</h2>
+      <div className='block  ml-12 mt-12 w-1/4 bg-lime-50 rounded-xl shadow-xl'>
       <List
         itemLayout="horizontal"
         dataSource={data}

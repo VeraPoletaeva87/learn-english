@@ -3,6 +3,7 @@ import { wordsAndMeanings } from "../data/data";
 import './wordCard.css';
 import WordTestProgress from "./testProgress";
 import FinishCard from "./finishCard";
+import { Button, Card } from "antd";
 
 const WordCard = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,17 +34,16 @@ const WordCard = () => {
   
     return (
     <>
-      <div className="word-card">
+      <div className="flex items-center flex-col">
         {answeredCount === 3 ? 
         <FinishCard totalWords={3} answeredWords={answeredCount}/> 
         :
         <>
-        <div>
-            <h2>{currentWord.word}</h2>
+        <Card title={currentWord.word} bordered={true} className="bg-lime-200 p-5 shadow-2xl w-1/4 h-56">
             <div className="wrap">
                 <ol>
                     {currentWord.options.map((meaning, index) => (
-                        <li className={!answered ? 'white-color' :
+                        <li className={!answered ? 'bg-lime-200' :
                             selectedAnswer === index && wrong ? 'red-color' : selectedAnswer === index && !wrong ? 'green-color' : ''}
                             key={index}
                             onClick={() => handleMeaningClick(index)}
@@ -51,8 +51,8 @@ const WordCard = () => {
                     ))}
                 </ol>
             </div>
-            <button onClick={handleNext}>Next</button>
-        </div>
+            <Button block onClick={handleNext}>Next</Button> 
+        </Card>
         <WordTestProgress totalWords={3} answeredWords={answeredCount} />
         </>
         } 
