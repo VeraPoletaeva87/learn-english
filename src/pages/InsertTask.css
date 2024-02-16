@@ -1,0 +1,25 @@
+.draggable {
+    width: 100px;
+    height: 30px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.droppable {
+    width: 100px;
+    height: 30px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    border-bottom: 2px solid blue;
+}
+
+.red-color {
+    background-color: red;
+}  
+
+.green-color {
+    background-color: green;
+}

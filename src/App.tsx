@@ -6,6 +6,7 @@ import Main from './pages/main';
 import WordsList from './pages/WordsList';
 import MeaningCard from './components/meaning';
 import Layout from './pages/Layout';
+import InsertTask from './pages/InsertTask';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" Component={Layout}>
         <Route index Component={Main} />
         <Route path="/quiz" Component={WordCard} />
+        <Route path="/insertTask" Component={InsertTask}/>
         <Route path="wordcards" Component={WordsList}>
           <Route path=":id" Component={MeaningCard} />
         </Route>

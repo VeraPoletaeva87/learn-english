@@ -119,6 +119,10 @@
   margin-right: 3rem
 }
 
+.mr-2 {
+  margin-right: 0.5rem
+}
+
 .mt-12 {
   margin-top: 3rem
 }
@@ -143,10 +147,6 @@
   height: 14rem
 }
 
-.h-80 {
-  height: 20rem
-}
-
 .h-96 {
   height: 24rem
 }
@@ -169,10 +169,6 @@
 
 .flex-col {
   flex-direction: column
-}
-
-.content-center {
-  align-content: center
 }
 
 .items-center {

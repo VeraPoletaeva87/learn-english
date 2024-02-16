@@ -14,7 +14,13 @@ const Main = () => {
             link: "/wordcards",
             description: 'Learn new words with dictionary!',
             image: vocabulary
-        }
+        },
+        {
+          title: "Learn rules",
+          link: "/insertTask",
+          description: 'Learn rules with insert task!',
+          image: vocabulary
+      }
     ]
     return (
       <div className='block  ml-12 mt-12 w-1/4 bg-lime-50 rounded-xl shadow-xl'>
