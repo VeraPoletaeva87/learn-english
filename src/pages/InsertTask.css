@@ -1,0 +1,44 @@
+.draggable {
+    width: 100px;
+    height: 30px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.draggable:hover {
+    background-color: #bef264;
+    border-radius: 10px;
+    color: #713f12;
+}
+
+.droppable {
+    width: 100px;
+    height: 30px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    border-bottom: 2px solid blue;
+}
+
+.red-color {
+    background-color: red;
+    color: white;
+}  
+
+.green-color {
+    background-color: green;
+    color: white;
+}
+
+.button-next {
+    width: 60px;
+    position: relative;
+    left: 426px;
+}
+
+.margin20 {
+    margin-bottom: 20px;
+}
