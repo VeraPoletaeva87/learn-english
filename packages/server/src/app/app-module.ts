@@ -4,6 +4,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
+import { WordsModule } from '../features/words/words-module';
+
+import { AppController } from './app-controller';
+
+const clientRootPath = join(__dirname, '..', '..', '..', 'client', 'dist');
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -17,11 +23,12 @@ import { join } from 'path';
       },
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..', '..', 'client', 'dist'),
-      exclude: ['/api/(.*)'],
+      exclude: ['/api/(.*)', '/docs'],
+      rootPath: clientRootPath,
     }),
+    WordsModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
   exports: [],
 })
