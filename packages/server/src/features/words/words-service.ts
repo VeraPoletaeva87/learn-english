@@ -23,7 +23,7 @@ export class WordsService {
   }
 
   async update(id: string, dto: UpdateWordDTO): Promise<Word> {
-    const item = await this.wordModel.findByIdAndUpdate(id, dto, { new: true }).exec();
+    const item = await this.wordModel.findByIdAndUpdate(id, { $set: dto }, { new: true }).exec();
     return this.returnIfExists(id, item);
   }
 
