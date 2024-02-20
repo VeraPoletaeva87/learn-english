@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "jsx": "react",
     "declaration": true,
     "esModuleInterop": true,
     "inlineSourceMap": true,

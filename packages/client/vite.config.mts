@@ -7,6 +7,8 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 export default defineConfig(({ mode }): UserConfig => {
   const env = loadEnv(mode, process.cwd());
   const isDevelopment = mode !== 'production';
+  const host = `${env.VITE_DOMAIN || 'localhost'}`;
+  const port = +env.VITE_PORT || 8080;
   return {
     plugins: isDevelopment ? [react(), basicSsl()] : [react()],
     resolve: {
@@ -17,6 +19,10 @@ export default defineConfig(({ mode }): UserConfig => {
         features: resolve(__dirname, 'src', 'features'),
         test: resolve(__dirname, 'src', 'test'),
       },
+    },
+    server: {
+      host: host,
+      port: port,
     },
     build: {
       rollupOptions: {
