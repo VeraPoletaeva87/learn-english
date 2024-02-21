@@ -5,7 +5,6 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 import { AppModule } from './app/app-module';
 import { LoggingInterceptor } from './common/interceptos/logging-interceptor';
-import { ParamsInterceptor } from './common/interceptos/params-interceptor';
 
 const PORT = process.env.PORT || 3000;
 
@@ -29,7 +28,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);
 
-  app.useGlobalInterceptors(new LoggingInterceptor(), new ParamsInterceptor());
+  app.useGlobalInterceptors(new LoggingInterceptor());
   await app.listen(PORT, '0.0.0.0');
   const url = await app.getUrl();
   console.log(`Application is running on: ${url}`);

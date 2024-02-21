@@ -1,4 +1,4 @@
-import { IsArray, IsString } from '@nestjs/class-validator';
+import { IsArray, IsNumber, IsString } from '@nestjs/class-validator';
 import { PartialType } from '@nestjs/mapped-types';
 
 export class CreateWordDTO {
@@ -16,6 +16,9 @@ export class CreateWordDTO {
 
   @IsArray()
   readonly synonyms!: string[];
+
+  @IsNumber()
+  readonly answer!: number;
 }
 
 export class UpdateWordDTO extends PartialType(CreateWordDTO) {}

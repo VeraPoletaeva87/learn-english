@@ -3,9 +3,11 @@ import { StrictMode } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // TODO: add lazy loading for components
+
 import GrammarCard from '../components/GrammarCard';
 import MeaningCard from '../components/meaning';
 import WordCard from '../components/wordCard';
+import AdminPage from '../pages/admin';
 import InsertTask from '../pages/InsertTask';
 import Layout from '../pages/Layout';
 import Main from '../pages/main';
@@ -20,6 +22,7 @@ const App = (): JSX.Element => {
         <Routes>
           <Route Component={Layout} path='/'>
             <Route Component={Main} index />
+            <Route Component={AdminPage} path='/admin' />
             <Route Component={WordCard} path='/quiz' />
             <Route Component={InsertTask} path='/insertTask' />
             <Route Component={WordsList} path='wordcards'>

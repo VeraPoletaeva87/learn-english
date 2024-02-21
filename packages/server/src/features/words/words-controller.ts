@@ -9,8 +9,10 @@ export class WordsController {
   constructor(private readonly wordService: WordsService) {}
 
   @Get()
-  findAll(): Promise<Word[]> {
-    return this.wordService.findAll();
+  async findAll(): Promise<Word[]> {
+    const response = await this.wordService.findAll();
+    console.log(response);
+    return response;
   }
 
   @Get(':id')

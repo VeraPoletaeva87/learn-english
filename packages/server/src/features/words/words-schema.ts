@@ -15,8 +15,11 @@ export class Word extends Document<string> {
   @Prop({ required: true, type: String })
   readonly example!: string;
 
-  @Prop({ required: true, type: String })
-  readonly synonyms!: string;
+  @Prop({ required: true, type: Number })
+  readonly answer!: number;
+
+  @Prop({ required: true, type: [String] })
+  readonly synonyms!: string[];
 }
 
 export const WordsSchema = SchemaFactory.createForClass(Word);
