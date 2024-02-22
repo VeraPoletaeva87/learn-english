@@ -27,7 +27,7 @@ const RulesList = (): JSX.Element => {
       <List
         bordered
         className='mr-12 bg-lime-50'
-        dataSource={rules}
+        dataSource={rules.filter((item) => item.parent === null)}
         header={<div className='text-lg'>Grammar rules</div>}
         renderItem={renderItem}
       />

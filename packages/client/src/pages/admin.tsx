@@ -33,6 +33,7 @@ const AdminPage = (): JSX.Element => {
 
   return (
     <div className='flex'>
+      <div>Add new word</div>
       <Form
         autoComplete='off'
         initialValues={{ remember: true }}

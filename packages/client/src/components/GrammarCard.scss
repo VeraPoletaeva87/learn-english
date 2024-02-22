@@ -1,0 +1,17 @@
+.content {
+  height: 360px;
+}
+
+.carousel {
+  width: 600px;
+}
+
+.carousel .slick-dots li button {
+  opacity: 1;
+  background: #e08b3c;
+}
+
+.carousel .slick-dots li.slick-active button {
+  opacity: 1;
+  background: #613512;
+}

@@ -1,13 +1,20 @@
 import type { JSX } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Button, Card } from 'antd';
-
-import { wordsAndMeanings } from '../data/data';
 
 import './wordCard.scss';
 import FinishCard from './finishCard';
 import WordTestProgress from './testProgress';
+
+export interface Word {
+  word: string;
+  options: string[];
+  answer: number;
+  meaning: string;
+  example: string;
+  synonyms: string[];
+}
 
 const WordCard = (): JSX.Element => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -16,15 +23,27 @@ const WordCard = (): JSX.Element => {
   const [answeredCount, setAnsweredCount] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
 
+  const [words, setWords] = useState<Word[]>([]);
+
+  useEffect(() => {
+    const url = 'http://localhost:3000/api/words';
+    fetch(url)
+      .then(async (response) => {
+        const data = await response.json();
+        setWords(data);
+      })
+      .catch(() => {});
+  }, []);
+
   const handleNext = () => {
     setAnswered(false);
     setSelectedAnswer(null);
-    setCurrentIndex((prevIndex) => (prevIndex === wordsAndMeanings.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) => (prevIndex === words.length - 1 ? 0 : prevIndex + 1));
   };
 
   const handleMeaningClick = (index: number) => {
     setSelectedAnswer(index);
-    if (index === wordsAndMeanings[currentIndex].answer) {
+    if (index === words[currentIndex].answer) {
       setWrong(false);
       if (!answered) setAnsweredCount((prevCount) => prevCount + 1);
     } else {
@@ -33,7 +52,7 @@ const WordCard = (): JSX.Element => {
     setAnswered(true);
   };
 
-  const currentWord = wordsAndMeanings[currentIndex];
+  const currentWord = words[currentIndex];
 
   return (
     <div className='flex items-center flex-col'>
