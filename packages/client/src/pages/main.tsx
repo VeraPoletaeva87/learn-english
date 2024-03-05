@@ -32,6 +32,12 @@ const data = [
     description: 'Practice using words with insert task!',
     image: insert,
   },
+  {
+    title: 'Audio Task',
+    link: '/audioTask',
+    description: 'Practice listening with audio task!',
+    image: insert,
+  },
 ];
 
 const Main = (): JSX.Element => {

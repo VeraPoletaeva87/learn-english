@@ -8,6 +8,7 @@ import GrammarCard from '../components/GrammarCard';
 import MeaningCard from '../components/meaning';
 import WordCard from '../components/wordCard';
 import AdminPage from '../pages/admin';
+import AudioTask from '../pages/audioTask';
 import InsertTask from '../pages/InsertTask';
 import Layout from '../pages/Layout';
 import Main from '../pages/main';
@@ -25,6 +26,7 @@ const App = (): JSX.Element => {
             <Route Component={AdminPage} path='/admin' />
             <Route Component={WordCard} path='/quiz' />
             <Route Component={InsertTask} path='/insertTask' />
+            <Route Component={AudioTask} path='/audioTask' />
             <Route Component={WordsList} path='wordcards'>
               <Route Component={MeaningCard} path=':id' />
             </Route>
