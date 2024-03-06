@@ -1,13 +1,17 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import { Button, Card, List } from 'antd';
+import { Button, Card, List, message } from 'antd';
 
 import audio3 from '../data/audioTask3.ogg';
 import { arrangeTaskSentences } from '../data/sentences';
 
+const CORRECT_ANSWER = '0123';
+
 const ArrangeTask = () => {
   //const [wrong, setWrong] = useState(false);
   const [answered, setAnswered] = useState(false);
+  const [sumbitDisabled, setSumbitDisabled] = useState(true);
+  const [answerCorrect, setAnswerCorrect] = useState(false);
   const [sourceSentences, setSourceSentences] = useState(arrangeTaskSentences);
   const [targetSentences, setTargetSentences] = useState([
     { id: 0, text: '' },
@@ -23,6 +27,10 @@ const ArrangeTask = () => {
   const allowDrop = useCallback((event: any) => {
     event.preventDefault();
   }, []);
+
+  useEffect(() => {
+    setSumbitDisabled(sourceSentences.length !== 0);
+  }, [sourceSentences]);
 
   const drop = useCallback(
     (event: any, item: any) => {
@@ -65,6 +73,22 @@ const ArrangeTask = () => {
     [answered, allowDrop, drop],
   );
 
+  const handleSubmit = () => {
+    if (targetSentences.map((item) => item.id).join('') === CORRECT_ANSWER) {
+      void message.success('Correct answer!');
+      setAnswerCorrect(true);
+    } else {
+      void message.error('Incorrect answer, please try again.');
+      setAnswerCorrect(false);
+      setTargetSentences([
+        { id: 0, text: '' },
+        { id: 1, text: '' },
+        { id: 2, text: '' },
+        { id: 3, text: '' },
+      ]);
+      setSourceSentences(arrangeTaskSentences);
+    }
+  };
   const handleNext = () => {
     setAnswered(false);
   };
@@ -83,8 +107,11 @@ const ArrangeTask = () => {
           <List bordered className='mr-12 bg-lime-50 w-1/2' dataSource={sourceSentences} renderItem={renderItem} />
           <List bordered className='w-1/2' dataSource={targetSentences} renderItem={emptyItem} />
         </div>
-        <div className='button-next'>
-          <Button block onClick={handleNext}>
+        <div className='button-next flex'>
+          <Button className='ml-3' disabled={sumbitDisabled} onClick={handleSubmit} type='primary'>
+            Submit
+          </Button>
+          <Button block disabled={!answerCorrect} onClick={handleNext}>
             Next
           </Button>
         </div>
