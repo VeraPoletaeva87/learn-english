@@ -1,0 +1,6 @@
+{
+  "contents": "dist",
+  "npmClient": "pnpm",
+  "packages": ["packages/*"],
+  "version": "independent"
+}
